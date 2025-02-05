@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azizou GNANKPE - Cloud & Systems Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #0ea5e9;
+            --accent-color: #06b6d4;
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --gradient: linear-gradient(135deg, #0ea5e9, #06b6d4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        /* Enhanced Header Styles */
+        header {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1.2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .submit-button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Azizou GNANKPE</div>
+            <div class="nav-links">
+                <a href="#home">About me</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Electrical Engineer Transitioning to Systems & Cloud Engineering</h1>
+            <p>Exploring innovative solutions at the intersection of hardware and cloud technology. Specializing in Open Source Solutions, Azure, and Enterprise Systems Administration</p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-code-branch"></i>
+                <h3>Open Source Solutions</h3>
+                <p>Terraform, Ansible, Docker, Zabbix, Jenkins, Git, Apache, Nginx, MySQL, PostgreSQL, Wazuh, Apache Guacamole, Prometheus, Grafana, Nagios, GLPI, Promox VE, KVM, VMware, VirtualBox, OPNsense, pfSense</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" 
+     alt="Microsoft Azure Logo" 
+     style="width:100px; height:auto;">
+                <h3>Azure Cloud</h3>
+                <p>Azure Policy, Bicep, ARM template, Virtual Machines, Azure AD, Storage, Functions, App Service, Azure DevOps, Entra ID, Cloud Security, Azure Arc, Azure Migrate, VPN, Hybrid Solution, Azure Automation and Azure AI Services</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-windows"></i>
+                <h3>Windows Systems</h3>
+                <p>Windows Server, DNS, DHCP, Active Directory, Group Policy, PowerShell, IIS, Windows Admin Center, Users and Groups, Advanced Administration</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-linux"></i>
+                <h3>Linux Systems</h3>
+                <p>Ubuntu, CentOS, Debian, RHEL, Shell Scripting (Bash), Users and Gropus Creation, Security, File Permissions, System Administration</p>
+            </div> 
+        </div>
+    </section>
+
+    <!-- Updated Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="/api/placeholder/400/300" alt="Cloud Migration">
+                <div class="project-info">
+                    <h3>Multi-Cloud Infrastructure</h3>
+                    <p>Designed and implemented hybrid cloud solutions using AWS and Azure services with high availability.</p>
+                    <div class="project-links">
+                        <a href="https://medium.com/@yourusername/multi-cloud-infrastructure" class="project-button medium">
+                            <i class="fab fa-medium"></i> View on Medium
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/400/300" alt="System Administration">
+                <div class="project-info">
+                    <h3>Enterprise Systems Migration</h3>
+                    <p>Led the migration of 200+ Windows and Linux servers to cloud infrastructure with minimal downtime.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/enterprise-migration" class="project-button github">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/400/300" alt="Automation">
+                <div class="project-info">
+                    <h3>Infrastructure Automation</h3>
+                    <p>Developed comprehensive automation scripts for system deployment and maintenance.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/infrastructure-automation" class="project-button github">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Certifications Section -->
+
+<section id="certifications" class="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-grid">
+        <div class="cert-card">
+            <div class="cert-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" 
+                    alt="Microsoft Azure Logo" 
+                    style="width:100px; height:auto;">
+                <h3>Azure Solutions Architect Expert (AZ-305)</h3>
+            </div>
+            <div class="cert-content">
+                <p class="cert-description">
+                    Expert-level certification demonstrating advanced skills in designing and implementing Azure infrastructure, 
+                    security, data solutions, and deployment strategies for cloud and hybrid environments.
+                </p>
+                <a href="https://learn.microsoft.com/api/credentials/share/en-us/Clouder-2/15787E1E56A8EBBB?sharingId=17122C69C8348224" class="verify-btn" target="_blank">
+                    <span class="verify-text">Verify Certificate</span>
+                    <span class="verify-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" 
+                    alt="Microsoft Azure Logo" 
+                    style="width:100px; height:auto;">
+                <h3>Azure Administrator (AZ-104)</h3>
+            </div>
+            <div class="cert-content">
+                <p class="cert-description">
+                    Validates expertise in implementing, managing, and monitoring Azure environments, including virtual networks,
+                    storage, compute, identity, security, and governance.
+                </p>
+                <a href="https://learn.microsoft.com/api/credentials/share/en-us/Clouder-2/338C240C7645D262?sharingId=17122C69C8348224" class="verify-btn" target="_blank">
+                    <span class="verify-text">Verify Certificate</span>
+                    <span class="verify-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" 
+                    alt="Microsoft Azure Logo" 
+                    style="width:100px; height:auto;">
+                <h3>Azure AI Engineer (AI-102)</h3>
+            </div>
+            <div class="cert-content">
+                <p class="cert-description">
+                    Specialized certification for implementing AI solutions using Azure Cognitive Services, Azure Bot Service,
+                    and Azure Machine Learning, including natural language processing and computer vision.
+                </p>
+                <a href="https://learn.microsoft.com/api/credentials/share/en-us/Clouder-2/ACBA351DB3E4F730?sharingId=17122C69C8348224" class="verify-btn" target="_blank">
+                    <span class="verify-text">Verify Certificate</span>
+                    <span class="verify-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-header">
+                <img src="https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png" 
+                    alt="Google Cloud Logo" 
+                    style="width:100px; height:auto;">
+                <h3>Google Cloud Associate Engineer</h3>
+            </div>
+            <div class="cert-content">
+                <p class="cert-description">
+                    Demonstrates proficiency in deploying applications, monitoring operations, and managing enterprise solutions
+                    using Google Cloud Platform, including compute, storage, and networking resources.
+                </p>
+                <a href="https://www.credly.com/badges/9d361455-d399-4f15-84ee-1f43c486dc72" class="verify-btn" target="_blank">
+                    <span class="verify-text">Verify Certificate</span>
+                    <span class="verify-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" 
+                    alt="Microsoft Logo" 
+                    style="width:100px; height:auto;">
+                <h3>Active Directory Administration</h3>
+            </div>
+            <div class="cert-content">
+                <p class="cert-description">
+                    Microsoft Applied Skills credential demonstrating expertise in: Deploying and managing AD DS domain controllers, Configuring Active Directory topology, Creating and managing AD DS objects,  Creating and configuring Group Policy Objects (GPOs) in AD DS and  Managing security in Active Directory Domain Services
+                </p>
+                <a href="https://learn.microsoft.com/api/credentials/share/en-us/Clouder-2/1FE384F42664FD35?sharingId=17122C69C8348224" class="verify-btn" target="_blank">
+                    <span class="verify-text">Verify Certificate</span>
+                    <span class="verify-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+<div class="cert-card">
+    <div class="cert-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" 
+            alt="OpenAI Logo" 
+            style="width:100px; height:auto;">
+        <h3>Prompt Engineering Certification</h3>
+    </div>
+    <div class="cert-content">
+        <p class="cert-description">
+            Advanced certification in crafting effective prompts for AI systems, understanding LLM behaviors,
+            and optimizing AI interactions for enhanced performance and results.
+        </p>
+        <a href="https://www.coursera.org/account/accomplishments/certificate/ZZBW3G96GWAH" class="verify-btn" target="_blank">
+            <span class="verify-text">Verify Certificate</span>
+            <span class="verify-icon">
+                <i class="fas fa-external-link-alt"></i>
+            </span>
+        </a>
+    </div>
+</div>
+        
+</section>
+
+<style>
+.certifications {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.cert-header img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.cert-header h3 {
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+.cert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cert-description {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.verify-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--gradient);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.verify-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+    background: white;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.verify-text {
+    font-size: 0.95rem;
+}
+
+.verify-icon {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.verify-btn:hover .verify-icon {
+    transform: translateX(3px);
+}
+</style>
+
+
+    <!-- Education Section (Added) -->
+    <section id="education" class="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-content">
+            <div class="education-item">
+                <h3>University of Paris-Est Créteil (UPEC)</h3>
+                <p>Master's Degree in Electrical Engineering Education</p>
+                <p>2022 - 2024</p>
+            </div>
+            <div class="education-item">
+                <h3>Studi & Digital Campus</h3>
+                <p>BTECH Higher National Diploma in Systems and Network Administration</p>
+                <p>2022 - 2023</p>
+            </div>
+           <div class="education-item">
+                <h3>University of Évry Paris-Saclay</h3>
+                <p>Bachelor's Degree in in Electrical Engineering</p>
+                <p>2021 - 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section Styles (Added) -->
+    <style>
+        .education {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+        }
+        .education .education-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .education-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+        .education-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .education-item p {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+    </style>
+
+    <!-- Add these styles to your existing CSS -->
+    <style>
+        /* Project Card Enhancements */
+        .project-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-button.github {
+            background: #24292e;
+            color: white;
+        }
+
+        .project-button.medium {
+            background: #000000;
+            color: white;
+        }
+
+        .project-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+    </style>
+
+<section id="contact" class="contact"> 
+  <h2 class="section-title">Contact Me</h2>
+  <form class="contact-form" action="https://formspree.io/f/xjkgovpl" method="POST">
+      <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="submit-button">Send Message</button>
+  </form>
+</section>
+>
+
+    <footer>
+        <p>&copy; 2025 Azizou GNANKPE. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/azizou-gnankpe/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Curious4Tech"><i class="fab fa-github"></i></a>
+            <a href="https://medium.com/@Curious4Tech"><i class="fab fa-medium"></i></a>
+            <a href="mailto:azizou.gnankpe-pro@protonmail.com" class="contact-link"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message sent successfully!');
+            form.reset();
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '0.8rem';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.padding = '1.2rem';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
